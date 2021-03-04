@@ -7,11 +7,14 @@ function handleListener(){
     console.log('Listening On!')
 }
 
-//function handleHome(req, res){
-//    console.log('Home!')
-//    res.send('Home!')
-//}
+const betweenHome = (req, res, next) =>{
+    console.log('Between');
+    next()
+}
+
 const handleHome = (req, res) => {console.log('Home!!'),res.send('Home!')}
+
+app.use(betweenHome)
 
 app.get('/', handleHome)
 
