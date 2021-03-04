@@ -41,3 +41,8 @@
     "start": "nodemon --exec babel-node index.js --delay 2 //2초 뒤에 재실행 "
     }
     ```
+
+12. morgan 설치
+13. helmet 설치
+14. body parser
+15. cookie parser
