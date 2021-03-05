@@ -46,3 +46,5 @@
 13. helmet 설치
 14. body parser
 15. cookie parser
+16. init.js / app.js 로 나누기
+17. routing
