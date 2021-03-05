@@ -9,7 +9,10 @@ import globalRouter from './routers/globalRouter';
 
 const app = express();
 
-const handleHome = (req, res) => {console.log('Home!!'),res.send('Home!')}
+const handleHome = (req, res) => {
+    console.log(req),
+    res.send('Home!')
+}
 
 app.use(cookieParser())
 app.use(bodyParser.json())
