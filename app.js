@@ -6,22 +6,14 @@ import bodyParser   from "body-parser"
 
 const app = express();
 
-const PORT = 4000;
-
-const handleListener = () => console.log('Listening On!')
-
-const betweenHome = (req, res, next) =>{
-    console.log('Between');
-    next()
-}
-
 const handleHome = (req, res) => {console.log('Home!!'),res.send('Home!')}
 
 app.use(cookieParser())
-app.use(bodyParser())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(helmet())
 app.use(morgan('dev'))
 
 app.get('/', handleHome)
 
-app.listen(PORT,handleListener)
+export default app;
