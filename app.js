@@ -10,18 +10,13 @@ import routes       from './routes';
 
 const app = express();
 
-const handleHome = (req, res) => {
-    //console.log(req),
-    res.send('Home!')
-}
+app.set("view engine", "pug")
 
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(helmet())
 app.use(morgan('dev'))
-
-app.get('/', handleHome)
 
 app.use(routes.home,globalRouter)
 app.use(routes.users, userRouter)
