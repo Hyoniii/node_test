@@ -6,11 +6,12 @@ import bodyParser   from "body-parser"
 import userRouter   from './routers/userRouter';
 import videoRouter  from './routers/videoRouter';
 import globalRouter from './routers/globalRouter';
+import routes       from './routes';
 
 const app = express();
 
 const handleHome = (req, res) => {
-    console.log(req),
+    //console.log(req),
     res.send('Home!')
 }
 
@@ -22,8 +23,8 @@ app.use(morgan('dev'))
 
 app.get('/', handleHome)
 
-app.use('/',globalRouter)
-app.use('/users', userRouter)
-app.use('/videos', videoRouter)
+app.use(routes.home,globalRouter)
+app.use(routes.users, userRouter)
+app.use(routes.videos, videoRouter)
 
 export default app;
